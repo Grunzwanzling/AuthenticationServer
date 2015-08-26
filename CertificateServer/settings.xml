@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="privateKey">private.key</entry>
+<entry key="logFile">log.txt</entry>
+<entry key="port">56789</entry>
+<entry key="PublicKeysDir">publicKeys</entry>
+<entry key="bankAccountFile">bankAccounts.config</entry>
+</properties>

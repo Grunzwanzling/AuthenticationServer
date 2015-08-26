@@ -65,54 +65,54 @@ public class ClientThread extends Thread {
 
 				String password = buffr.readLine();
 
-				if (username != null && password != null) {
-					if (Server.certificates.containsKey(username)) {
-						if (Server.AuthenticationTest(username,
-								authenticationKey, password)) {
-							Server.log("Client "
-									+ clientID
-									+ " sucessfully authenticated with the username "
-									+ username);
-							buffw.writeBytes("Certificate accepted\n");
-
-							while (true) {
-
-								String command = buffr.readLine();
-								if (command != null) {
-									// Chat.log("Client " + clientID + " ("
-									// + username + ") is sending: \""
-									// + command + "\"");
-									// Command EXISTS
-
-									// Command: SEND
-
-								}
-							}
-
-						} else {
-
-							buffw.writeBytes("Wrong username or certificate!\n");
-							clientSocket.close();
-							System.out
-									.println("Client "
-											+ clientID
-											+ " disconnected because of wrong username or certificate");
-						}
-
-					} else {
-						buffw.writeBytes("Wrong username or certificate!\n");
-						clientSocket.close();
-						Server.log("Client " + clientID
-								+ " disconnected because of wrong username");
-					}
-
-				} else {
-					buffw.writeBytes("Incomplete authentication data!\n");
-					clientSocket.close();
-					Server.log("Client "
-							+ clientID
-							+ " disconnected because of incomplete authentication data");
-				}
+				// if (username != null && password != null) {
+				// if (Server.certificates.containsKey(username)) {
+				// if (Server.AuthenticationTest(username,
+				// authenticationKey, password)) {
+				// Server.log("Client "
+				// + clientID
+				// + " sucessfully authenticated with the username "
+				// + username);
+				// buffw.writeBytes("Certificate accepted\n");
+				//
+				// while (true) {
+				//
+				// String command = buffr.readLine();
+				// if (command != null) {
+				// // Chat.log("Client " + clientID + " ("
+				// // + username + ") is sending: \""
+				// // + command + "\"");
+				// // Command EXISTS
+				//
+				// // Command: SEND
+				//
+				// }
+				// }
+				//
+				// } else {
+				//
+				// buffw.writeBytes("Wrong username or certificate!\n");
+				// clientSocket.close();
+				// System.out
+				// .println("Client "
+				// + clientID
+				// + " disconnected because of wrong username or certificate");
+				// }
+				//
+				// } else {
+				// buffw.writeBytes("Wrong username or certificate!\n");
+				// clientSocket.close();
+				// Server.log("Client " + clientID
+				// + " disconnected because of wrong username");
+				// }
+				//
+				// } else {
+				// buffw.writeBytes("Incomplete authentication data!\n");
+				// clientSocket.close();
+				// Server.log("Client "
+				// + clientID
+				// + " disconnected because of incomplete authentication data");
+				// }
 
 			} else {
 				buffw.writeBytes("Only version "
